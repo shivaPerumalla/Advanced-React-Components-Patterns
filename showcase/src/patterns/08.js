@@ -12,10 +12,7 @@ import { generateRandomNumber } from '../utils/generateRandomNumber'
 import styles from './index.css'
 import userStyles from './usage.css'
 
-/** ====================================
-   *          🔰Hook
-        Hook for Animation
-  ==================================== **/
+// Hook
 
 const useClapAnimation = ({
   duration: tlDuration,
@@ -121,10 +118,7 @@ const useClapAnimation = ({
   return animationTimeline
 }
 
-/** ====================================
-   *          🔰Hook
-        Hook for Clap State
-  ==================================== **/
+// Clap
 const MAX_CLAP = 50
 const INIT_STATE = {
   count: 0,
@@ -171,10 +165,9 @@ const useClapState = ({ initialState = INIT_STATE } = {}) => {
   }
 }
 
-/** ====================================
-   *          🔰Hook
-        useEffectAfterMount
-  ==================================== **/
+
+     //   useEffectAfterMount
+ 
 
 function useEffectAfterMount (cb, deps) {
   const componentJustMounted = useRef(true)
@@ -187,10 +180,7 @@ function useEffectAfterMount (cb, deps) {
   }, deps)
 }
 
-/** ====================================
-   *          🔰Hook
-            useDOMRef
-  ==================================== **/
+          //  useDOMRef
 const useDOMRef = () => {
   const [DOMRef, setDOMRef] = useState({})
   const setRef = useCallback(node => {
@@ -205,10 +195,6 @@ const useDOMRef = () => {
   return [DOMRef, setRef]
 }
 
-/** ====================================
-   *      🔰SubComponents
-  Smaller Component used by <MediumClap />
-  ==================================== **/
 
 const ClapContainer = forwardRef(
   (
@@ -279,11 +265,6 @@ const CountTotal = forwardRef(
   }
 )
 
-/** ====================================
-      *        🔰USAGE
-      Below's how a potential user
-      may consume the component API
-  ==================================== **/
 
 const Usage = () => {
   const { clapState, getTogglerProps, getCounterProps } = useClapState()

@@ -13,10 +13,7 @@ import mojs from 'mo-js'
 import { generateRandomNumber } from '../utils/generateRandomNumber'
 import styles from './index.css'
 
-/** ====================================
-   *          🔰Hook
-        Hook for Animation
-  ==================================== **/
+// Hook
 
 const useClapAnimation = ({
   duration: tlDuration,
@@ -117,9 +114,8 @@ const useClapAnimation = ({
 
   return animationTimeline
 }
-/** ====================================
-   *      🔰 MediumClap
-  ==================================== **/
+
+// Clap
 const initialState = {
   count: 0,
   countTotal: generateRandomNumber(500, 10000),

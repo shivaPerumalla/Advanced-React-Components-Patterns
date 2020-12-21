@@ -13,10 +13,6 @@ import React, {
   import styles from './index.css'
   import userStyles from './usage.css'
   
-  /** ====================================
-   *          🔰Hook
-      Hook for Holding Previous Vals
-  ==================================== **/
   function usePrevious (value) {
     const ref = useRef()
     useEffect(() => {
@@ -25,10 +21,6 @@ import React, {
     return ref.current === undefined ? null : ref.current
   }
   
-  /** ====================================
-   *          🔰Hook
-        Hook for Animation
-  ==================================== **/
   
   const useClapAnimation = ({
     duration: tlDuration,
@@ -134,10 +126,7 @@ import React, {
     return animationTimeline
   }
   
-  /** ====================================
-   *          🔰Hook
-        Hook for Clap State
-  ==================================== **/
+// Clap
   const MAX_CLAP = 50
   const INIT_STATE = {
     count: 0,
@@ -211,10 +200,9 @@ import React, {
     reset: 'reset'
   }
   
-  /** ====================================
-   *          🔰Hook
-        useEffectAfterMount
-  ==================================== **/
+ 
+      //  useEffectAfterMount
+
   
   function useEffectAfterMount (cb, deps) {
     const componentJustMounted = useRef(true)
@@ -227,10 +215,8 @@ import React, {
     }, deps)
   }
   
-  /** ====================================
-   *          🔰Hook
-            useDOMRef
-  ==================================== **/
+ //    useDOMRef
+
   const useDOMRef = () => {
     const [DOMRef, setDOMRef] = useState({})
     const setRef = useCallback(node => {
@@ -244,11 +230,7 @@ import React, {
   
     return [DOMRef, setRef]
   }
-  
-  /** ====================================
-   *      🔰SubComponents
-  Smaller Component used by <MediumClap />
-  ==================================== **/
+ 
   
   const ClapContainer = forwardRef(
     (
@@ -318,12 +300,6 @@ import React, {
       )
     }
   )
-  
-  /** ====================================
-      *        🔰USAGE
-      Below's how a potential user
-      may consume the component API
-  ==================================== **/
   
   const initialState = { count: 10, countTotal: 22, isClicked: false }
   const Usage = () => {

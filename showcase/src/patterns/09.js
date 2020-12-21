@@ -11,11 +11,7 @@ import mojs from 'mo-js'
 import { generateRandomNumber } from '../utils/generateRandomNumber'
 import styles from './index.css'
 import userStyles from './usage.css'
-
-/** ====================================
-   *          🔰Hook
-      Hook for Holding Previous Vals
-  ==================================== **/
+// Holding previous props value
 function usePrevious (value) {
   const ref = useRef()
   useEffect(() => {
@@ -24,10 +20,7 @@ function usePrevious (value) {
   return ref.current === undefined ? null : ref.current
 }
 
-/** ====================================
-   *          🔰Hook
-        Hook for Animation
-  ==================================== **/
+// Hook
 
 const useClapAnimation = ({
   duration: tlDuration,
@@ -133,10 +126,6 @@ const useClapAnimation = ({
   return animationTimeline
 }
 
-/** ====================================
-   *          🔰Hook
-        Hook for Clap State
-  ==================================== **/
 const MAX_CLAP = 50
 const INIT_STATE = {
   count: 0,
@@ -198,12 +187,8 @@ const useClapState = ({ initialState = INIT_STATE } = {}) => {
     resetDep: resetRef.current
   }
 }
-
-/** ====================================
-   *          🔰Hook
-        useEffectAfterMount
-  ==================================== **/
-
+ //useEffectAfterMount
+  
 function useEffectAfterMount (cb, deps) {
   const componentJustMounted = useRef(true)
   useEffect(() => {
@@ -233,10 +218,7 @@ const useDOMRef = () => {
   return [DOMRef, setRef]
 }
 
-/** ====================================
-   *      🔰SubComponents
-  Smaller Component used by <MediumClap />
-  ==================================== **/
+// Sub Components
 
 const ClapContainer = forwardRef(
   (
@@ -307,11 +289,6 @@ const CountTotal = forwardRef(
   }
 )
 
-/** ====================================
-      *        🔰USAGE
-      Below's how a potential user
-      may consume the component API
-  ==================================== **/
 
 const initialState = { count: 10, countTotal: 22, isClicked: false }
 const Usage = () => {
